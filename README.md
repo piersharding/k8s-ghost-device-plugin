@@ -70,6 +70,34 @@ or deploy it as a daemonset:
 ghost-device-plugin-daemonset-2wbdv         1/1       Running   0          14m
 ghost-device-plugin-daemonset-7pwf7         1/1       Running   0          14m
 ```
+* List out the allocatable resource, and capacity per node
+```
+kubectl get nodes -o json | jq     '.items[] | .metadata.name, .status.allocatable, .status.capacity'
+```
+Which gives:
+```
+"k8s-master-0"
+{
+  "cpu": "64",
+  "ephemeral-storage": "337894066846",
+  "hugepages-1Gi": "0",
+  "hugepages-2Mi": "0",
+  "memory": "131813436Ki",
+  "pods": "110",
+  "ska-sdp.org/widget": "0"  # not scheduled on master
+}
+"k8s-minion-0"
+{
+  "cpu": "64",
+  "ephemeral-storage": "337894066846",
+  "hugepages-1Gi": "0",
+  "hugepages-2Mi": "0",
+  "memory": "131813436Ki",
+  "pods": "110",
+  "ska-sdp.org/widget": "3"
+}
+...
+```
 
 * Run Test container
 
