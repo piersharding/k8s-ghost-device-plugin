@@ -1,0 +1,10 @@
+devices:
+- type: snaffler
+  model: v1
+  device: /dev/wibble1  
+- type: snaffler
+  model: v1
+  device: /dev/wibble2  
+- type: snaffler
+  model: v2
+  device: /dev/wibble3  

@@ -1,0 +1,13 @@
+vendor/
+file/
+hack/
+*.go
+Makefile
+vendor.conf
+*.lock
+*.yaml
+*.yml
+*.sh
+*.md
+LICENSE
+k8s-ghost-device-plugin
